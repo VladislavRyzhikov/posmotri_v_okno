@@ -1,0 +1,361 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  block-size: 100%;
+}
+
+.page {
+  display: grid;
+  place-items: center;
+  padding-top: 133px;
+  inline-size: 1200px;
+  block-size: 100%;
+  margin: auto;
+  color: #fff;
+  font-family: 'Fira Sans Condensed', sans-serif;
+  font-size: 18px;
+  background-color: #1b1919;
+}
+
+h1,
+h2,
+h3,
+h4,
+p,
+ul,
+ol,
+li,
+blockquote,
+fieldset {
+  margin: 0;
+  padding: 0;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+
+.visually-hidden {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+}
+
+
+.content {
+  margin: 0 auto;
+  max-width: 1140px;
+  min-height: 534px;
+  display: grid;
+  grid-template-columns: 1fr 399px;
+  gap: 30px;
+
+}
+
+.result {
+  width: 100%;
+  align-self: end;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+
+.result__video-container {
+  width: 100%;
+  max-height: 386px;
+  position: relative;
+}
+
+.result__video {
+  width: 100%;
+  max-height: 386px;
+  object-fit: cover;
+}
+
+
+.search-form {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: end;
+  gap: 40px;
+}
+
+.search-form__fieldset {
+  border: none;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+
+.search-form__fieldset-title {
+  color: #FFF;
+  font-family: inherit;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1em;
+}
+
+.search-form__label {
+  display: flex;
+  gap: 5px;
+}
+
+/* Стили состояний поля ввода */
+.search-form__textfield:focus {
+  outline: none;
+}
+
+
+.search-form__textfield:focus-visible {
+  border: 1px solid #FFFFFF;
+  outline: 2px;
+}
+
+
+.search-form__textfield {
+  padding: 2.5px 0 2.5px 0;
+  width: 225px;
+  border: none;
+  background: transparent;
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+  color: rgba(255, 255, 255, 0.70);
+  font-family: inherit;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1em;
+}
+
+
+.search-form__label:has(.search-form__textfield:active) {
+  outline: none;
+  border-left: 1px solid #FFF;
+  border-right: 1px solid #FFF;
+}
+
+
+.search-form__checkbox-list {
+  margin-bottom: 5px;
+  display: flex;
+  gap: 15px;
+}
+
+
+/* Стили  для чекбоксов и их состояния */
+
+.search-form__pseudo-checkbox {
+  margin-top: 1.1px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 19px;
+  height: 19px;
+  border: 1px solid #fff;
+}
+
+.search-form__pseudo-checkbox::before {
+  content: "";
+  display: block;
+  width: 15px;
+  height: 15px;
+  background: #fff;
+  visibility: hidden;
+}
+
+
+.search-form__checkbox:checked+.search-form__pseudo-checkbox::before {
+  visibility: visible;
+}
+
+.search-form__label:hover .search-form__label-text {
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+
+.search-form__label:has(:focus-visible) {
+  outline: 1px solid #fff;
+  outline-offset: 2px;
+}
+
+/* Общие стили для кнопки */
+.button {
+  padding: 0;
+  min-width: 194px;
+  height: 34px;
+  background: transparent;
+  border: 1px solid currentColor;
+  color: #FFF;
+  text-align: center;
+  font-family: inherit;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.12em;
+}
+
+/* Стили для кнопки "Найти" */
+.search-form__submit-button:active {
+  background-color: #545050;
+}
+
+.search-form__submit-button:focus {
+  outline: none;
+}
+
+.search-form__submit-button:focus-visible {
+  outline: 1px solid #fff;
+  outline-offset: 2px;
+}
+
+.search-form__submit-button:hover {
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+
+.more-button-template:focus {
+  outline: none;
+} 
+
+
+.more-button:focus-visible {
+  outline: 1px solid #fff;
+  outline-offset: 2px;
+}
+
+.content__details {
+  display: grid;
+  grid-template-rows: 210px 298px;
+  overflow: hidden;
+  gap: 26px;
+}
+
+
+.title {
+  color: #fff;
+  font-family: Oswald;
+  font-size: 75px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 96%;
+  text-transform: uppercase;
+}
+
+
+.content__accent {
+  color: #545050;
+
+}
+
+
+.content__list {
+  position: relative;
+  overflow: scroll;
+  scrollbar-width: none;
+}
+
+
+
+.content__list::-webkit-scrollbar {
+  display: none;
+}
+
+
+.content__list-item {
+  margin-bottom: 30px;
+}
+
+.content__list-item:last-of-type {
+  margin-bottom: 0;
+}
+
+
+.content__card-link {
+  margin: 0 2px 0 2px;
+  display: block;
+  text-decoration: none;
+  text-underline-offset: 5px;
+}
+
+
+.content__card-link:focus {
+  outline: none;
+}
+
+
+.content__card-link:focus-visible {
+  outline: 1px solid #fff;
+}
+
+
+.content__video-card {
+  display: flex;
+}
+
+
+.content__video-card:active {
+  background-color: #545050;
+}
+
+
+
+.content__video-card:hover {
+  color: #FFF;
+  text-decoration: underline;
+}
+
+
+.content__video-card-thumbnail {
+  width: 100%;
+  height: 103px;
+  object-fit: cover;
+}
+
+.content__video-card-description-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+
+.content__video-card-title {
+  color: #FFF;
+  font-family: Oswald;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.4em;
+  text-transform: uppercase;
+}
+
+.content__video-card-description {
+  color: #FFF;
+  font-family: Fira Sans Condensed;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 16.2px;
+  text-decoration: none;
+}
+
+
+.more-button {
+  width: 393px;
+  height: 32px;
+  margin: 0 3px 2px 3px;
+}
