@@ -307,6 +307,12 @@ ol {
   background: #545050;
 }
 
+
+.content__card-link:active {
+  background-color: #545050;
+}
+
+
 .content__card-link:focus {
   outline: none;
 }
@@ -315,6 +321,8 @@ ol {
 .content__card-link:focus-visible {
   outline: 1px solid #fff;
 }
+
+
 
 
 .content__video-card {
