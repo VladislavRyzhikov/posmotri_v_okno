@@ -11,7 +11,6 @@ html {
 .page {
   display: grid;
   place-items: center;
-  padding-top: 133px;
   inline-size: 1200px;
   block-size: 100%;
   margin: auto;
@@ -73,16 +72,19 @@ ol {
 
 .result__video-container {
   width: 100%;
-  max-height: 386px;
+  height: 386px;
   position: relative;
 }
 
 .result__video {
   width: 100%;
-  max-height: 386px;
+  height: 100%;
   object-fit: cover;
 }
 
+.result__video:has(.content__list-item:checked) {
+  background-color: #545050;
+}
 
 .search-form {
   display: grid;
@@ -136,13 +138,22 @@ ol {
   font-size: 18px;
   font-weight: 400;
   line-height: 1em;
+  appearance: none;
 }
 
+.search-form__textfield:focus {
+  outline: none;
+}
+
+.search-form__textfield:focus-visible {
+  border-left: 0;
+  border-right: 0;
+}
 
 .search-form__label:has(.search-form__textfield:active) {
   outline: none;
-  border-left: 1px solid #FFF;
-  border-right: 1px solid #FFF;
+  border-left: 1px solid #fff;
+  border-right: 1px solid #fff;
 }
 
 
@@ -163,6 +174,10 @@ ol {
   width: 19px;
   height: 19px;
   border: 1px solid #fff;
+}
+
+.search-form__pseudo-checkbox:hover{
+  cursor: pointer;
 }
 
 .search-form__pseudo-checkbox::before {
@@ -195,7 +210,7 @@ ol {
 .button {
   padding: 0;
   min-width: 194px;
-  height: 34px;
+  min-height: 34px;
   background: transparent;
   border: 1px solid currentColor;
   color: #FFF;
@@ -239,7 +254,7 @@ ol {
 
 .content__details {
   display: grid;
-  grid-template-rows: 210px 298px;
+  grid-template-rows: 1fr 298px;
   overflow: hidden;
   gap: 26px;
 }
@@ -247,11 +262,11 @@ ol {
 
 .title {
   color: #fff;
-  font-family: Oswald;
+  font-family: Oswald, sans-serif;
   font-size: 75px;
   font-style: normal;
   font-weight: 700;
-  line-height: 96%;
+  line-height: 94%;
   text-transform: uppercase;
 }
 
@@ -263,16 +278,12 @@ ol {
 
 
 .content__list {
+  width: 100%;
   position: relative;
-  overflow: scroll;
-  scrollbar-width: none;
+  overflow: overlay;
+  overflow-x:hidden; 
 }
 
-
-
-.content__list::-webkit-scrollbar {
-  display: none;
-}
 
 
 .content__list-item {
@@ -285,12 +296,16 @@ ol {
 
 
 .content__card-link {
-  margin: 0 2px 0 2px;
+  margin: 2px 2px 0 2px;
   display: block;
   text-decoration: none;
   text-underline-offset: 5px;
 }
 
+
+.content__card-link_current {
+  background: #545050;
+}
 
 .content__card-link:focus {
   outline: none;
@@ -306,10 +321,6 @@ ol {
   display: flex;
 }
 
-
-.content__video-card:active {
-  background-color: #545050;
-}
 
 
 
@@ -335,7 +346,7 @@ ol {
 
 .content__video-card-title {
   color: #FFF;
-  font-family: Oswald;
+  font-family: Oswald, sans-serif;
   font-size: 30px;
   font-style: normal;
   font-weight: 700;
@@ -345,17 +356,20 @@ ol {
 
 .content__video-card-description {
   color: #FFF;
-  font-family: Fira Sans Condensed;
-  font-size: 18px;
+  font-family: Fira Sans Condensed, sans-serif;
+  font-size: 18px;  
   font-style: normal;
   font-weight: 400;
   line-height: 16.2px;
   text-decoration: none;
 }
 
-
+/* Отступы заданы по тому что обводка обезазается и не отображается полностью */
 .more-button {
-  width: 393px;
-  height: 32px;
-  margin: 0 3px 2px 3px;
+  width: 100%;
+  margin: 0 3px 3px 3px;
+}
+
+.more-button:active {
+  background-color: #545050;
 }
